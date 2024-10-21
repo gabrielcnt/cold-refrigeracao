@@ -89,6 +89,7 @@ function exibirProdutos(produtos) {
         card.appendChild(img);
         card.appendChild(titulo);
         container.appendChild(card);
+        
     });
 }
 
