@@ -22,13 +22,41 @@
     </header>
     <main>
         <div class="banner"></div>
-        <ul class="categorias">
-            <li>Split Inverter</li>
-            <li>Janela</li>
-            <li>Cassete</li>
-            <li>Portatil</li>
-            <li>Aparelhos com WI-FI</li>
-        </ul>
+        <div class="containerfc">
+            <div class="filtros">
+                <h3>Filtrar produtos</h3>
+
+                <label for="">Capacidade (BTU)</label>
+                <select name="" id="filtro-btu">
+                    <option value="">Selecione</option>
+                    <option value="9000">9000 BTU</option>
+                    <option value="12000">12000 BTU</option>
+                    <option value="18000">18000 BTU</option>
+                </select>
+
+                <label for="">Tipo</label>
+                <select name="" id="filtro-tipo">
+                    <option value="">Selecione</option>
+                    <option value="">Split-Inverter</option>
+                    <option value="">Portatil</option>
+                    <option value="">Janela</option>
+                    <option value="">Cassete</option>
+                    <option value="">Aparelhos com wi-fi</option>
+                </select>
+
+                <label for="">Marca</label>
+                <select name="" id="filtro-marca">
+                    <option value="">selecione</option>
+                    <option value="lg">LG</option>
+                    <option value="gree">Gree</option>
+                    <option value="samsung">Samsung</option>
+                    
+                </select>
+            </div>
+            <div class="container-cards" id="produtos-container">
+            </div>
+        </div>
     </main>
+    <script src="cards.js"></script>
 </body>
 </html>
