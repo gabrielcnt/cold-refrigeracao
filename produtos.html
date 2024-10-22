@@ -26,32 +26,34 @@
             <div class="filtros">
                 <h3>Filtrar produtos</h3>
 
-                <label for="">Capacidade (BTU)</label>
-                <select name="" id="filtro-btu">
-                    <option value="">Selecione</option>
-                    <option value="9000">9000 BTU</option>
-                    <option value="12000">12000 BTU</option>
-                    <option value="18000">18000 BTU</option>
-                </select>
+                <h4>Capacidade (BTU)</h4>
+                <input type="checkbox" id="c1" class="filtro-btu" value="9000">
+                <label for="c1">9.000 BTU</label>
+                <input type="checkbox" id="c2" class="filtro-btu" value="12000">
+                <label for="c2">12.000 BTU</label>
+                <input type="checkbox" id="c3" class="filtro-btu" value="18000">
+                <label for="c3">18.000 BTU</label>
+                
+                <h4>Tipo</h4>
+                <input type="checkbox"id="c4" class="filtro-tipo" value="split-inverter">
+                <label for="c4">Split-Inverter</label>
+                <input type="checkbox"id="c5" class="filtro-tipo" value="portatil">
+                <label for="c5">Portatil</label>
+                <input type="checkbox"id="c6" class="filtro-tipo" value="janela">
+                <label for="c6">Janela</label>
+                <input type="checkbox"id="c7" class="filtro-tipo" value="cassete">
+                <label for="c7">Cassete</label>
+                <input type="checkbox"id="c8" class="filtro-tipo" value="wifi">
+                <label for="c8">Aparelhos com wi-fi</label>
 
-                <label for="">Tipo</label>
-                <select name="" id="filtro-tipo">
-                    <option value="">Selecione</option>
-                    <option value="">Split-Inverter</option>
-                    <option value="">Portatil</option>
-                    <option value="">Janela</option>
-                    <option value="">Cassete</option>
-                    <option value="">Aparelhos com wi-fi</option>
-                </select>
+                <h4>Marca</h4>
+                <input type="checkbox" id="c9" class="filtro-marca" value="lg">
+                <label for="c9">LG</label>
+                <input type="checkbox" id="c10" class="filtro-marca" value="gree">
+                <label for="c10">Gree</label>
+                <input type="checkbox" id="c11" class="filtro-marca" value="samsung">
+                <label for="c11">Samsung</label>
 
-                <label for="">Marca</label>
-                <select name="" id="filtro-marca">
-                    <option value="">selecione</option>
-                    <option value="lg">LG</option>
-                    <option value="gree">Gree</option>
-                    <option value="samsung">Samsung</option>
-                    
-                </select>
                 <button id="resetar-filtros">Resetar filtros</button>
             </div>
             <div class="container-cards" id="produtos-container">

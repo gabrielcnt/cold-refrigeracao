@@ -24,6 +24,7 @@
 
 html, body {
     width: 100vw;
+    height: 100vh;
     margin: auto;
     background-color: var(--corbg);
 }
@@ -37,11 +38,12 @@ header {
 
 .logo {
     display: flex;
-    h1 {
-        margin-top: 15px;
-        font-size: 50px;
-        letter-spacing: 3px;
-    }
+}
+
+.logo h1 {
+    margin-top: 15px;
+    font-size: 50px;
+    letter-spacing: 3px;
 }
 
 nav ul{
@@ -50,16 +52,18 @@ nav ul{
     align-items: center;
     list-style-type: none;
     padding: 10px 200px;
-    li {
-        margin: 30px 30px;
-        text-decoration: none;
-        font-size: 30px;
-    }
-    li a:hover {
-        color: var(--corlogo);
-        border-bottom: 2px solid;
-        transition: .7s;
-    }
+}
+
+nav ul li {
+    margin: 30px 30px;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+nav ul li a:hover {
+    color: var(--corlogo);
+    border-bottom: 2px solid;
+    transition: .7s;
 }
 
 main {
@@ -75,24 +79,8 @@ main .banner {
     background-color: var(--corlogo);
 }
 
-main .catebtn {
+main .containerfc {
     display: flex;
-    justify-content: center;
-
-    li {
-        padding: 10px 20px;
-        font-size: 20px;
-    }
-
-    a:hover {
-        color: var(--corlogo);
-        border-bottom: 2px solid;
-        transition: .7s;
-    }
-}
-
-.containerfc {
-    display: flex
 }
 
 main .filtros {
@@ -102,81 +90,102 @@ main .filtros {
     text-align: center;
     padding: 0 15px;
     margin-top: 50px;
-    label {
-        margin-top: 30px;
-    }
-    select {
-        margin: 5px 0;
-        color: black;
-    }
-    option {
-        color: black;
-    }
-    #resetar-filtros {
-        display: none;
-    }
-    button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--corbtn);
-        margin: 10px auto;
-        width: 200px;
-        border: none;
-        border-radius: 20px;
-        height: 40px;
-        text-align: center;
-        box-shadow: var(--sombra);
-        cursor: pointer;
-    }
+    user-select: none;
+}
+
+main .filtros h3 {
+    margin-bottom: 10px;
+}
+
+main .filtros h4 {
+    background-color: var(--corbtn);
+    margin: auto;
+    width: 200px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+main .filtros label {
+    margin: 5px auto;
+}
+
+main .filtros input[type="checkbox"] {
+    display: none;
+}
+
+main .filtros label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+main .filtros input + label::before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--corlogo);
+    display: inline-block;
+}
+
+main .filtros input:checked + label::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 -0.5 17 17' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='si-glyph si-glyph-checked'%3E%3Ctitle%3E1228%3C/title%3E%3Cdefs%3E%3C/defs%3E%3Cg stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cpath d='M3.432,6.189 C3.824,5.798 4.455,5.798 4.847,6.189 L6.968,8.31 L13.147,2.131 C13.531,1.747 14.157,1.753 14.548,2.144 L16.67,4.266 C17.06,4.657 17.066,5.284 16.684,5.666 L7.662,14.687 C7.278,15.07 6.651,15.064 6.261,14.673 L1.311,9.723 C0.92,9.333 0.92,8.7 1.311,8.31 L3.432,6.189 Z' fill='%23fff' class='si-glyph-fill'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+main .filtros button {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--corbtn);
+    margin: 10px auto;
+    width: 200px;
+    border: none;
+    border-radius: 20px;
+    height: 40px;
+    text-align: center;
+    box-shadow: var(--sombra);
+    cursor: pointer;
 }
 
 main .container-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+    grid-template-columns: repeat(3, 320px);
+    grid-auto-rows: 1fr;
     gap: 5px;
     padding-top: 50px;
     width: 80vw;
 
-    .card {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        overflow: hidden;
-        width: 300px;
-        height: 500px;
-        border-radius: 10px;
-        padding: 10px;
-        margin: 10px 10px;
-        background-color: var(--corlogo);
-    }
+}
 
-    img {
-        border-radius: 10px;
-        max-width: 100%;
-        padding-bottom: 5px;
-        box-shadow: var(--sombra);
-    }
-    h3 {
-        text-align: center;
-        font-size: 20px;
-        color: var(--corbg);
-        line-height: 20px;
-        padding-top: 15px;
-    }
-    .btnpreços {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--corbtn);
-        margin: 0 auto;
-        width: 200px;
-        border-radius: 20px;
-        height: 40px;
-        text-align: center;
-        box-shadow: var(--sombra);
-        cursor: pointer;
-        
-    }
+main .container-cards .card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 300px;
+    height: 500px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 10px;
+    background-color: var(--corlogo);
+}
+
+main .container-cards img {
+    border-radius: 10px;
+    max-width: 100%;
+    margin-bottom: 10px;
+    box-shadow: var(--sombra);
+}
+
+main .container-cards h3 {
+    text-align: center;
+    font-size: 20px;
+    color: var(--corbg);
+    line-height: 20px;
+    padding-top: 15px;
 }
 

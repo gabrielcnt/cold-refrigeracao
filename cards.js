@@ -1,79 +1,50 @@
+let produtos = [];
 
-
-function carregar(){
-    fetch('produtos.json')
-        .then(Response => Response.json())
-        .then(produtos => {
-            const container = document.querySelector("#produtos-container")
-            
-            produtos.forEach(produto => {
-                const card = document.createElement('div');
-                card.classList.add('card');
-
-                const imagem = document.createElement('img');
-                imagem.src = produto.imagem;
-                imagem.alt = produto.nome;
-                
-                const titulo = document.createElement('h3');
-                titulo.textContent = produto.nome;
-
-                const botao = document.createElement('div');
-                botao.classList.add('btnpreços');
-                botao.textContent = 'Ver Preços';
-
-                
-                card.appendChild(imagem);
-                card.appendChild(titulo);
-                card.appendChild(botao);
-                container.appendChild(card);
-            })
-        })
-}
-carregar()
-
-let produtos = []; // Variável para armazenar a lista de produtos
-let capacidade = null;
-let tipo = null;
-let marca = null;
-
-// Função para carregar produtos do JSON
+// Função para carregar produtos
 function carregarProdutos() {
     fetch('produtos.json')
         .then(response => response.json())
         .then(data => {
-            produtos = data; // Armazena os produtos
-            exibirProdutos(produtos); // Exibe todos os produtos ao carregar
+            produtos = data;
+            exibirProdutos(produtos);
         });
+}
+
+// Função para coletar valores selecionados de checkboxes
+function getCheckedValues(classe) {
+    const checkboxes = document.querySelectorAll(`.${classe}:checked`);
+    return Array.from(checkboxes).map(checkbox => checkbox.value);
 }
 
 // Função para aplicar filtros
 function aplicarFiltros() {
-    const capacidade = document.getElementById('filtro-btu').value;
-    const tipo = document.getElementById('filtro-tipo').value;
-    const marca = document.getElementById('filtro-marca').value;
+    const capacidades = getCheckedValues('filtro-btu');
+    const tipos = getCheckedValues('filtro-tipo');
+    const marcas = getCheckedValues('filtro-marca');
 
-    let filtrados = produtos; // Começa com todos os produtos
+    let filtrados = produtos;
 
-    if (capacidade) {
-        filtrados = filtrados.filter(produto => produto.btu == capacidade);
+    if (capacidades.length > 0) {
+        filtrados = filtrados.filter(produto => capacidades.includes(produto.btu.toString()));
     }
-    if (tipo) {
-        filtrados = filtrados.filter(produto => produto.tipo == tipo);
+    if (tipos.length > 0) {
+        filtrados = filtrados.filter(produto => tipos.includes(produto.tipo));
     }
-    if (marca) {
-        filtrados = filtrados.filter(produto => produto.marca == marca);
+    if (marcas.length > 0) {
+        filtrados = filtrados.filter(produto => marcas.includes(produto.marca));
     }
 
-    exibirProdutos(filtrados); // Exibe os produtos filtrados
+    exibirProdutos(filtrados);
 
-    // Exibe ou oculta o botão de resetar filtros
-    document.getElementById('resetar-filtros').style.display = (filtrados.length < produtos.length) ? 'block' : 'none';
+    // Exibe o botão de resetar se houver filtros aplicados
+    document.getElementById('resetar-filtros').style.display =
+        (capacidades.length || tipos.length || marcas.length) ? 'block' : 'none';
 }
 
 // Função para exibir produtos
 function exibirProdutos(produtos) {
     const container = document.getElementById('produtos-container');
-    container.innerHTML = ''; // Limpa o container
+    container.innerHTML = '';
 
     produtos.forEach(produto => {
         const card = document.createElement('div');
@@ -89,20 +60,17 @@ function exibirProdutos(produtos) {
         card.appendChild(img);
         card.appendChild(titulo);
         container.appendChild(card);
-        
     });
 }
 
 // Função para resetar filtros
-document.getElementById('resetar-filtros').addEventListener('click', function() {
-    // Reseta os valores de capacidade, tipo e marca
-    document.getElementById('filtro-btu').value = '';
-    document.getElementById('filtro-tipo').value = '';
-    document.getElementById('filtro-marca').value = '';
+document.getElementById('resetar-filtros').addEventListener('click', function () {
+    document.querySelectorAll('.filtros input[type="checkbox"]').forEach(checkbox => {
+        checkbox.checked = false;
+    });
 
-    exibirProdutos(produtos); // Exibe todos os produtos
-
-    this.style.display = 'none'; // Oculta o botão de resetar filtros
+    exibirProdutos(produtos);
+    this.style.display = 'none';
 });
 
 // Event listener para aplicar filtros
