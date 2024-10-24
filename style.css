@@ -27,6 +27,7 @@ html, body {
     height: 100vh;
     margin: auto;
     background-color: var(--corbg);
+    overflow-x: hidden;
 }
 
 header {
@@ -189,3 +190,30 @@ main .container-cards h3 {
     padding-top: 15px;
 }
 
+/* 
+________________________________________PAGINA DE DETALHES DOS PRODUTOS________________________________________*/
+
+.info-ar {
+    width: 95vw;
+    height: 500px;
+    border-radius: 20%;
+    text-align: center;
+    background-color: var(--corlogo);
+}
+
+.lojas {
+    margin: auto;
+    width: 80vw;
+    height: 600px;
+    background-color: var(--corbtn);
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.esp-tec {
+    width: 80vw;
+    height: 500px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: var(--corlogo);
+}
