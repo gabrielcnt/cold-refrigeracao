@@ -1,28 +1,28 @@
 [
     {
         "nome": "Ar Condicionado Split Hw G-classic Inverter Gree 9000 Btus Frio R-32 220V Monofásico",
-        "imagem": "imagens/ar-condicionado-gree-9k-btu.webp",
+        "imagem": "imagens/split/9000btu/gree/ar-condicionado-gree-9k-btu.webp",
         "btu": "9000",
         "tipo": "split-inverter",
         "marca": "gree"
     },
     {
         "nome": "Ar Condicionado Split Hi Wall - Inverter R-32 - LG - Dual Voice + Inteligência Artificial - 9000 Btus - Frio - 220V",
-        "imagem": "imagens/ar-condicionado-lg-9k-btu.webp",
+        "imagem": "imagens/split/9000btu/lg/ar-condicionado-lg-9k-btu.webp",
         "btu": "9000",
         "tipo": "split-inverter",
         "marca": "lg"
     },
     {
         "nome": "Ar Condicionado Split Inverter Hi Wall Springer Midea Xtreme Save Connect 12000 BTUs Quente/Frio 42AGVQI12M5 - 220V",
-        "imagem":"imagens/ar-condicionado-midea-12k-btu.webp",
+        "imagem":"imagens/split/12000btu/midea/ar-condicionado-midea-12k-btu.webp",
         "btu": "12000",
         "tipo": "split-inverter",
         "marca": "midea"
     },
     {
         "nome": "Ar Condicionado Split Inverter Windfree Connect Samsung 12000 Btus Frio 220V Monofásico",
-        "imagem": "imagens/ar-Condicionado-Split-Inverter-Windfree-Connect-Samsung-12000-Btus-Frio-220V-Monofásico.webp",
+        "imagem": "imagens/split/12000btu/samsung/ar-Condicionado-Split-Inverter-Windfree-Connect-Samsung-12000-Btus-Frio-220V-Monofásico.webp",
         "btu": "12000",
         "tipo": "split-inverter",
         "marca": "samsung"

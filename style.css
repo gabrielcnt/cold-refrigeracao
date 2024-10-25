@@ -22,12 +22,20 @@
     --sombra: 05px 10px 8px rgba(0, 0, 0, 0.247);
 }
 
-html, body {
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     width: 100vw;
     height: 100vh;
     margin: auto;
     background-color: var(--corbg);
     overflow-x: hidden;
+    flex: 1;
 }
 
 header {
@@ -172,7 +180,15 @@ main .container-cards .card {
     border-radius: 10px;
     padding: 10px;
     margin: 10px 10px;
+    box-shadow: var(--sombra);
     background-color: var(--corlogo);
+    cursor: pointer;
+    user-select: none;
+}
+
+main .container-cards .card:hover {
+    background-color: var(--corbg);
+    transition: 0.4s;
 }
 
 main .container-cards img {
@@ -185,7 +201,7 @@ main .container-cards img {
 main .container-cards h3 {
     text-align: center;
     font-size: 20px;
-    color: var(--corbg);
+    color: var(--corfont);
     line-height: 20px;
     padding-top: 15px;
 }
@@ -194,6 +210,10 @@ main .container-cards h3 {
 ________________________________________PAGINA DE DETALHES DOS PRODUTOS________________________________________*/
 
 .info-ar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
     width: 95vw;
     height: 500px;
     border-radius: 20%;
@@ -201,19 +221,99 @@ ________________________________________PAGINA DE DETALHES DOS PRODUTOS_________
     background-color: var(--corlogo);
 }
 
+.info-ar .foto img {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
+
+.info-ar h1 {
+    margin-bottom: 150px;   
+}
+
 .lojas {
     margin: auto;
+    padding: 20px;
     width: 80vw;
-    height: 600px;
     background-color: var(--corbtn);
     margin-top: 10px;
     border-radius: 10px;
 }
 
+.lojas .lj {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--corbg);
+    margin-bottom: 5px;
+}
+
+.lojas .lj .logol img {
+    width: 100px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.lojas .lj p {
+    font-size: 20px;
+    line-height: 25px;
+}
+.lojas .lj span {
+    color: var(--corlogo);
+    font-size: 30px;
+
+}
+
+.lojas .lj .link {
+    background-color: var(--corlogo);
+    padding: 15px 25px;
+    border-radius: 30px;
+    box-shadow: var(--sombra);
+    user-select: none;
+    cursor: pointer;
+}
+
+.lojas .lj .link:active {
+    box-shadow: none;
+    background-color: var(--corbg);
+}
+
 .esp-tec {
     width: 80vw;
-    height: 500px;
     margin-top: 20px;
     border-radius: 10px;
     background-color: var(--corlogo);
+}
+
+/* 
+________________________________________ESPECIFICAÇÕES TECNICAS________________________________________*/
+
+.esp-tec table {
+    margin: 10px auto;
+    font-size: 30px;
+    border-collapse: collapse;
+    width: 70vw;
+    
+}
+
+.esp-tec table th {
+    text-align: left;
+    padding: 10px;
+}
+
+.esp-tec table td {
+    padding: 10px;
+    
+}
+
+.esp-tec table tr:nth-child(2n) {
+    background-color: var(--corbtn);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--corbtn);
+    height: 90px;
 }
