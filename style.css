@@ -31,11 +31,9 @@ body {
     flex-direction: column;
     min-height: 100vh;
     width: 100vw;
-    height: 100vh;
     margin: auto;
     background-color: var(--corbg);
     overflow-x: hidden;
-    flex: 1;
 }
 
 header {
@@ -80,6 +78,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex: 1;
 }
 
 main .banner {
@@ -278,15 +277,17 @@ ________________________________________PAGINA DE DETALHES DOS PRODUTOS_________
     background-color: var(--corbg);
 }
 
-.esp-tec {
-    width: 80vw;
-    margin-top: 20px;
-    border-radius: 10px;
-    background-color: var(--corlogo);
-}
 
 /* 
 ________________________________________ESPECIFICAÇÕES TECNICAS________________________________________*/
+
+.esp-tec {
+    width: 80vw;
+    margin: 20px 0;
+    border-radius: 10px;
+    background-color: var(--corlogo);
+
+}
 
 .esp-tec table {
     margin: 10px auto;
@@ -315,5 +316,5 @@ footer {
     justify-content: center;
     align-items: center;
     background-color: var(--corbtn);
-    height: 90px;
+    height: 50px;
 }
