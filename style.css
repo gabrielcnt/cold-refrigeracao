@@ -26,6 +26,31 @@ html {
     height: 100%;
 }
 
+.loading {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ani {
+    border: 50px solid var(--corfont);
+    border-right: 50px solid transparent;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    animation: loading 1.5s ease-in-out infinite;
+}
+
+@keyframes loading {
+    to {
+        transform: rotate(0deg);
+    }
+    from {
+        transform: rotate(360deg);
+    }
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -71,6 +96,10 @@ nav ul li a:hover {
     color: var(--corlogo);
     border-bottom: 2px solid;
     transition: .7s;
+}
+
+#opacidade {
+    opacity: 0;
 }
 
 main {
@@ -187,6 +216,7 @@ main .container-cards .card {
 
 main .container-cards .card:hover {
     background-color: var(--corbg);
+    box-shadow:  0px 0px 8px #76A5DB;
     transition: 0.4s;
 }
 
@@ -215,7 +245,7 @@ ________________________________________PAGINA DE DETALHES DOS PRODUTOS_________
     padding: 40px;
     width: 95vw;
     height: 500px;
-    border-radius: 20%;
+    border-radius: 100px;
     text-align: center;
     background-color: var(--corlogo);
 }
@@ -227,7 +257,11 @@ ________________________________________PAGINA DE DETALHES DOS PRODUTOS_________
 }
 
 .info-ar h1 {
-    margin-bottom: 150px;   
+    margin-bottom: 0px;
+    font-size: 50px;
+    text-shadow: var(--sombra);
+    line-height: 55px;
+    padding: 50px;
 }
 
 .lojas {
@@ -249,6 +283,7 @@ ________________________________________PAGINA DE DETALHES DOS PRODUTOS_________
 
 .lojas .lj .logol img {
     width: 100px;
+    height: 100px;
     background-color: #fff;
     border-radius: 10px;
 }
@@ -270,6 +305,12 @@ ________________________________________PAGINA DE DETALHES DOS PRODUTOS_________
     box-shadow: var(--sombra);
     user-select: none;
     cursor: pointer;
+}
+
+.lojas .lj .link:hover {
+    background-color: var(--corbtn);
+    box-shadow:  0px 0px 8px #76A5DB;
+    transition: 0.3s; 
 }
 
 .lojas .lj .link:active {

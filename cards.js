@@ -57,6 +57,8 @@ function exibirProdutos(produtos) {
         const titulo = document.createElement('h3');
         titulo.textContent = produto.nome;
 
+        card.addEventListener('click', () => abrirProduto(produto.id));
+
         card.appendChild(img);
         card.appendChild(titulo);
         container.appendChild(card);
@@ -78,3 +80,8 @@ document.querySelector('.filtros').addEventListener('change', aplicarFiltros);
 
 // Carrega os produtos ao iniciar
 carregarProdutos();
+
+function abrirProduto(id){
+
+    window.location.href = `detalhes.html?id=${id}`;
+}

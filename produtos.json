@@ -1,30 +1,59 @@
 [
     {
+        "id": "1",
         "nome": "Ar Condicionado Split Hw G-classic Inverter Gree 9000 Btus Frio R-32 220V Monofásico",
         "imagem": "imagens/split/9000btu/gree/ar-condicionado-gree-9k-btu.webp",
         "btu": "9000",
         "tipo": "split-inverter",
-        "marca": "gree"
+        "marca": "gree",
+        "capacidade": "9000 btus",
+        "gas-refrigerante": "R-32",
+        "tecnologia": "inverter",
+        "mercado-livre":{
+            "logo": "imagens/lojas/mercado-livre-logo.png",
+            "avista": "R$2.569",
+            "cartao": "R$256,90",
+            "link": "https://www.mercadolivre.com.br/ar-condicionado-split-hi-wall-gree-g-top-auto-inverter-9000-btus-so-frio-220v/p/MLB35503234#wid%3DMLB4608202506%26sid%3Dsearch%26searchVariation%3DMLB35503234%26position%3D4%26search_layout%3Dstack%26type%3Dproduct%26tracking_id%3D1c6a5a1c-d634-438d-a112-00529a42b308"
+        },
+        "magalu":{
+            "logo": "imagens/lojas/magalu-logo.png",
+             "avista": "R$2.569",
+            "cartao": " 10x R$256,90",
+            "link": "https://www.magazineluiza.com.br/ar-condicionado-split-gree-inverter-9-000-btus-frio-wi-fi-g-top/p/238594000/ar/aciv/"
+        }
+
     },
     {
+        "id": "2",
         "nome": "Ar Condicionado Split Hi Wall - Inverter R-32 - LG - Dual Voice + Inteligência Artificial - 9000 Btus - Frio - 220V",
         "imagem": "imagens/split/9000btu/lg/ar-condicionado-lg-9k-btu.webp",
         "btu": "9000",
         "tipo": "split-inverter",
-        "marca": "lg"
+        "marca": "lg",
+        "capacidade": "9000 btus",
+        "gas-refrigerante": "R-32",
+        "tecnologia": "inverter"
     },
     {
+        "id": "3",
         "nome": "Ar Condicionado Split Inverter Hi Wall Springer Midea Xtreme Save Connect 12000 BTUs Quente/Frio 42AGVQI12M5 - 220V",
         "imagem":"imagens/split/12000btu/midea/ar-condicionado-midea-12k-btu.webp",
         "btu": "12000",
         "tipo": "split-inverter",
-        "marca": "midea"
+        "marca": "midea",
+        "capacidade": "12000 btus",
+        "gás refrigerante": "R-410A",
+        "tecnologia": "inverter"
     },
     {
+        "id": "4",
         "nome": "Ar Condicionado Split Inverter Windfree Connect Samsung 12000 Btus Frio 220V Monofásico",
         "imagem": "imagens/split/12000btu/samsung/ar-Condicionado-Split-Inverter-Windfree-Connect-Samsung-12000-Btus-Frio-220V-Monofásico.webp",
         "btu": "12000",
         "tipo": "split-inverter",
-        "marca": "samsung"
+        "marca": "samsung",
+        "capacidade": "12000 btus",
+        "gás refrigerante": "R-410A",
+        "tecnologia": "inverter"
     }
 ]

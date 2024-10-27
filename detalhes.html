@@ -12,6 +12,9 @@
     <title>Cold Refrigeração</title>
 </head>
 <body>
+    <div class="loading">
+        <div class="ani"></div>
+    </div>
     <header>
         <div class="logo">
             <img src="icons/air-conditioning-svgrepo-com.svg" alt="logo">
@@ -24,24 +27,24 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main id="opacidade">
         <div class="info-ar">
-            <div class="foto"><img src="imagens/split/9000btu/lg/ar-condicionado-lg-9k-btu.webp" alt=""></div>
-            <h1>Ar Condicionado Split Hi Wall - Inverter R-32 - LG - Dual Voice + Inteligência Artificial - 9000 Btus - Frio - 220V</h1>
+            <div class="foto"><img id="produto-imagem" src="" alt="imagem do produto"></div>
+            <h1 id="produto-nome"></h1>
             
         </div>
         <div class="lojas">
             <div class="lj">
-                <div class="logol"><img src="imagens/lojas/mercado-livre-logo.png" alt=""></div>
-                <div class="avista"> <p>À vista por <br><span>R$2799</span></p></div>
-                <div class="cartao"><p>ou até 10x de <span>R$279,90</span></p></div>
-                <div class="link"><p>ir à loja</p></div>
+                <div class="logol"><img id="ml-logo" src="" alt="logo mercado livre"></div>
+                <div class="avista"> <p>À vista por<br><span id="avista-ml"></span></p></div>
+                <div class="cartao"><p>ou 10x de <span id="cartao-ml">R$</span></p></div>
+                <div class="link" id="botao-ml"><p>ir à loja</p></div>
             </div>
             <div class="lj">
-                <div class="logol"><img src="imagens/lojas/magalu-logo.png" alt=""></div>
-                <div class="avista"> <p>À vista por <br><span>R$2849</span></p></div>
-                <div class="cartao"><p>ou até 10x de <span>R$284,90</span></p></div>
-                <div class="link"><p>ir à loja</p></div>
+                <div class="logol"><img id="magalu-logo" src="" alt="logo magalu"></div>
+                <div class="avista"> <p>À vista por <br><span id="avista-mag">R$</span></p></div>
+                <div class="cartao"><p>ou até 10x de <span id="cartao-mag">R$</span></p></div>
+                <div class="link" id="botao-magalu"><p>ir à loja</p></div>
             </div>
         </div>
 
@@ -55,19 +58,19 @@
                 <tbody>
                     <tr>
                         <th scope="row">id</th>
-                        <td>1</td>
+                        <td id="produto-id"></td>
                     </tr>
                     <tr>
                         <th scope="row">Capacidade</th>
-                        <td>9000 btus</td>
+                        <td id="produto-capacidade"></td>
                     </tr>
                     <tr>
                         <th scope="row">Gás Refrigerante</th>
-                        <td>R-32</td>
+                        <td id="produto-gas"></td>
                     </tr>
                     <tr>
                         <th scope="row">tecnologia</th>
-                        <td>inverter</td>
+                        <td id="produto-tecnologia"></td>
                     </tr>
                 </tbody>
             </table>
@@ -76,5 +79,6 @@
     <footer>
         <p>&copy; 2024 Cold Refrigeração. Todos os direitos reservados.</p>
     </footer>
+    <script src="detalhes.js"></script>
 </body>
 </html>
