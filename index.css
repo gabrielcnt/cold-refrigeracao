@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    text-transform: capitalize;
+    box-sizing: border-box;
+    color: var(--corfont);
+    text-decoration: none;
+    list-style-type: none;
+
+}
+
+:root {
+    --corbg: #2D3033;
+    --corbtn: #203A57;
+    --corfont: #fff;
+    --corlogo: #76A5DB;
+    --sombra: 05px 10px 8px rgba(0, 0, 0, 0.247);
+}
+
+main .anun {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0px;
+    margin: 20px auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--corbtn);
+}
+
+main .anun img {
+    width: 600px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+main .anun .info {
+    width: 500px;
+}
+
+main .anun .info .ver-p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 500px;
+    font-size: 30px;
+    background-color: transparent;
+    border-radius: 30px;
+    border: 1px solid var(--corbtn);
+    box-shadow: var(--sombra);
+    user-select: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+main .anun .info .ver-p:hover {
+    background-color: var(--corbtn);
+    box-shadow:  0px 0px 8px #76A5DB;
+    transition: 0.4s;
+}
+
+main .anun .info h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+main .anun .video h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+main .anun .video p {
+    text-align: center;
+    line-height: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+main .anun .video {
+    width: 760px;
+    margin: auto;
+    text-align: center;
+}
+
+main .anun iframe:nth-child(3) {
+    flex: 1 1 100%;
+}
+
+main .anun .samsung {
+    width: 600px;
+    
+}

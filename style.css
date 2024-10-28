@@ -11,7 +11,6 @@
     color: var(--corfont);
     text-decoration: none;
     list-style-type: none;
-
 }
 
 :root {
@@ -62,10 +61,13 @@ body {
 }
 
 header {
+    position: fixed;
     display: flex;
     height: 100px;
+    width: 100vw;
     justify-content: space-between;
     padding: 5px;
+    background-color: var(--corbg);
 }
 
 .logo {
@@ -103,6 +105,7 @@ nav ul li a:hover {
 }
 
 main {
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -113,7 +116,11 @@ main {
 main .banner {
     width: 90vw;
     height: 400px;
-    background-color: var(--corlogo);
+    background-image: url(imagens/index-fotos/pexels-dropshado-2251247.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 90%;
+
 }
 
 main .containerfc {
