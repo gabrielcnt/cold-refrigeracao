@@ -18,7 +18,7 @@
     --corbtn: #203A57;
     --corfont: #fff;
     --corlogo: #76A5DB;
-    --sombra: 05px 10px 8px rgba(0, 0, 0, 0.247);
+    --sombra: 05px 10px 8px rgba(0, 0, 0, 0.103);
 }
 
 html {
@@ -105,6 +105,7 @@ nav ul li a:hover {
 }
 
 main {
+    width: 100vw;
     margin-top: 100px;
     display: flex;
     flex-direction: column;
@@ -116,11 +117,23 @@ main {
 main .banner {
     width: 90vw;
     height: 400px;
-    background-image: url(imagens/index-fotos/pexels-dropshado-2251247.jpg);
-    background-position: top;
+    background-image: url(../imagens/index-fotos/pexels-darkmodecinema-29120647.jpg);
+    background-position: 0px -80px;
     background-repeat: no-repeat;
-    background-size: 90%;
+    background-size: 100%;
+    border-radius: 5px;
+    box-shadow: var(--sombra);
 
+}
+
+main .banner .ban-texto {
+    background-color: #00000094;
+    width: 300px;
+    height: 100%;
+    font-size: 15px;
+    padding-top: 25px;
+    padding-left: 10px;
+    line-height: 40px;
 }
 
 main .containerfc {
@@ -211,7 +224,7 @@ main .container-cards .card {
     flex-direction: column;
     overflow: hidden;
     width: 300px;
-    height: 500px;
+    height: 450px;
     border-radius: 10px;
     padding: 10px;
     margin: 10px 10px;

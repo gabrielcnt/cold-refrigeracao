@@ -19,7 +19,7 @@
     --corbtn: #203A57;
     --corfont: #fff;
     --corlogo: #76A5DB;
-    --sombra: 05px 10px 8px rgba(0, 0, 0, 0.247);
+    --sombra: 05px 10px 8px rgba(0, 0, 0, 0.103);
 }
 
 main .anun {
@@ -28,6 +28,7 @@ main .anun {
     justify-content: space-around;
     align-items: center;
     gap: 0px;
+    width: 100vw;
     margin: 20px auto;
     padding-bottom: 20px;
     border-bottom: 1px solid var(--corbtn);
@@ -47,11 +48,11 @@ main .anun .info .ver-p {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    height: 70px;
     width: 500px;
     font-size: 30px;
     background-color: transparent;
-    border-radius: 30px;
+    border-radius: 10px;
     border: 1px solid var(--corbtn);
     box-shadow: var(--sombra);
     user-select: none;
@@ -62,7 +63,7 @@ main .anun .info .ver-p {
 main .anun .info .ver-p:hover {
     background-color: var(--corbtn);
     box-shadow:  0px 0px 8px #76A5DB;
-    transition: 0.4s;
+    transition: 0.2s;
 }
 
 main .anun .info h1 {

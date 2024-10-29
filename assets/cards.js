@@ -2,7 +2,7 @@ let produtos = [];
 
 // Função para carregar produtos
 function carregarProdutos() {
-    fetch('produtos.json')
+    fetch('assets/produtos.json')
         .then(response => response.json())
         .then(data => {
             produtos = data;

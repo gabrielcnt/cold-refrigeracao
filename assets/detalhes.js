@@ -24,7 +24,7 @@ async function carregarProduto() {
     const id = getProdutoId(); // Obtém o ID da URL
     setTimeout(async () => {
         try {
-            const response = await fetch('produtos.json'); // Carrega o JSON
+            const response = await fetch('assets/produtos.json'); // Carrega o JSON
             if (!response.ok) {
                 throw new Error('Erro ao carregar o arquivo JSON');
             }
