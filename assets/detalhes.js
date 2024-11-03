@@ -56,28 +56,37 @@ async function carregarProduto() {
 }
 
 // Função para preencher os dados das lojas
-function preencherLojas(produto) {
-    // Preenche Mercado Livre, se disponível
-    if (produto['mercado-livre']) {
-        const ml = produto['mercado-livre'];
-        document.getElementById('ml-logo').src = ml.logo;
-        document.getElementById('avista-ml').textContent = ml.avista;
-        document.getElementById('cartao-ml').textContent = ml.cartao;
-        document.getElementById('botao-ml').addEventListener('click', () => {
-            window.open(ml.link, '_blank');
-        });
-    }
 
-    // Preenche Magalu, se disponível
-    if (produto.magalu) {
-        const mag = produto.magalu;
-        document.getElementById('magalu-logo').src = mag.logo;
-        document.getElementById('avista-mag').textContent = mag.avista;
-        document.getElementById('cartao-mag').textContent = mag.cartao;
-        document.getElementById('botao-magalu').addEventListener('click', () => {
-            window.open(mag.link, '_blank');
-        });
-    }
+function preencherLojas() {
+    fetch('produtos.json')
+        .then(response => response.json())
+        .then(lojas => {
+            const container = document.getElementById('lojas');
+            container.innerHTML = '';
+
+            produtos.forEach(produto=> {
+                const loja = document.createElement('div')
+                loja.classList.add('lj');
+        
+                const img = document.createElement('logo')
+                img.src = produto.imagem;
+                img.alt = produto.nome;
+        
+                const aVista = document.createElement('span');
+                avista.textContent = produto.avista;
+        
+                const parcelado = document.createElement('span');
+                cartao.textContent = produto.cartao;
+        
+                loja.appendChild(img);
+                loja.appendChild(titulo);
+                container.appendChild(card);
+        
+            })
+        })
+
+
+    
 }
 
 // Executa a função quando a página é carregada
