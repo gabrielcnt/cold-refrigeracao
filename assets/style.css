@@ -21,10 +21,6 @@
     --sombra: 05px 10px 8px rgba(0, 0, 0, 0.103);
 }
 
-html {
-    height: 100%;
-}
-
 .loading {
     position: fixed;
     left: 50%;
@@ -53,11 +49,9 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    width: 100vw;
+    width: 80vw;
     margin: auto;
     background-color: var(--corbg);
-    overflow-x: hidden;
 }
 
 header {
@@ -115,8 +109,10 @@ main {
 }
 
 main .banner {
-    width: 90vw;
+    width: 1200px;
     height: 400px;
+    margin: auto;
+    padding: 0 20px;
     background-image: url(../imagens/index-fotos/pexels-darkmodecinema-29120647.jpg);
     background-position: 0px -80px;
     background-repeat: no-repeat;
@@ -211,7 +207,7 @@ main .filtros button {
 
 main .container-cards {
     display: grid;
-    grid-template-columns: repeat(3, 320px);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-auto-rows: 1fr;
     gap: 5px;
     padding-top: 50px;
@@ -313,7 +309,7 @@ ________________________________________PAGINA DE DETALHES DOS PRODUTOS_________
     line-height: 25px;
 }
 .lojas .lj span {
-    color: var(--corlogo);
+    color: var(--corfont);
     font-size: 30px;
 
 }
@@ -378,4 +374,5 @@ footer {
     align-items: center;
     background-color: var(--corbtn);
     height: 50px;
+    width: 100vw;
 }

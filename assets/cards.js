@@ -1,4 +1,26 @@
-let produtos = [];
+// Função para exibir produtos
+function exibirProdutos(produtos) {
+    const container = document.getElementById('produtos-container');
+    container.innerHTML = '';
+
+    produtos.forEach(produto => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        const img = document.createElement('img');
+        img.src = produto.imagem;
+        img.alt = produto.nome;
+
+        const titulo = document.createElement('h3');
+        titulo.textContent = produto.nome;
+
+        card.addEventListener('click', () => abrirProduto(produto.id));
+
+        card.appendChild(img);
+        card.appendChild(titulo);
+        container.appendChild(card);
+    });
+}
 
 // Função para carregar produtos
 function carregarProdutos() {
@@ -6,8 +28,9 @@ function carregarProdutos() {
         .then(response => response.json())
         .then(data => {
             produtos = data;
-            exibirProdutos(produtos);
-        });
+            exibirProdutos(produtos); // Agora exibirProdutos está definida antes de ser usada
+        })
+        .catch(error => console.error('Erro ao carregar produtos:', error));
 }
 
 // Função para coletar valores selecionados de checkboxes
@@ -41,47 +64,23 @@ function aplicarFiltros() {
         (capacidades.length || tipos.length || marcas.length) ? 'block' : 'none';
 }
 
-// Função para exibir produtos
-function exibirProdutos(produtos) {
-    const container = document.getElementById('produtos-container');
-    container.innerHTML = '';
-
-    produtos.forEach(produto => {
-        const card = document.createElement('div');
-        card.classList.add('card');
-
-        const img = document.createElement('img');
-        img.src = produto.imagem;
-        img.alt = produto.nome;
-
-        const titulo = document.createElement('h3');
-        titulo.textContent = produto.nome;
-
-        card.addEventListener('click', () => abrirProduto(produto.id));
-
-        card.appendChild(img);
-        card.appendChild(titulo);
-        container.appendChild(card);
-    });
-}
-
-// Função para resetar filtros
-document.getElementById('resetar-filtros').addEventListener('click', function () {
-    document.querySelectorAll('.filtros input[type="checkbox"]').forEach(checkbox => {
-        checkbox.checked = false;
-    });
-
-    exibirProdutos(produtos);
-    this.style.display = 'none';
-});
-
-// Event listener para aplicar filtros
-document.querySelector('.filtros').addEventListener('change', aplicarFiltros);
-
-// Carrega os produtos ao iniciar
-carregarProdutos();
-
-function abrirProduto(id){
-
+// Função para abrir produto em outra página
+function abrirProduto(id) {
     window.location.href = `detalhes.html?id=${id}`;
 }
+
+// Evento para resetar filtros
+document.addEventListener('DOMContentLoaded', () => {
+    carregarProdutos(); // Inicia o carregamento dos produtos
+
+    document.getElementById('resetar-filtros').addEventListener('click', function () {
+        document.querySelectorAll('.filtros input[type="checkbox"]').forEach(checkbox => {
+            checkbox.checked = false;
+        });
+
+        exibirProdutos(produtos);
+        this.style.display = 'none';
+    });
+
+    document.querySelector('.filtros').addEventListener('change', aplicarFiltros);
+});

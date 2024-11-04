@@ -55,39 +55,51 @@ async function carregarProduto() {
     }, 1500);
 }
 
-// Função para preencher os dados das lojas
+function preencherLojas(produto) {
+    const lojasContainer = document.getElementById('lojas'); // Contêiner onde as divs de lojas serão inseridas
+    lojasContainer.innerHTML = ''; // Limpa qualquer conteúdo existente
 
-function preencherLojas() {
-    fetch('produtos.json')
-        .then(response => response.json())
-        .then(lojas => {
-            const container = document.getElementById('lojas');
-            container.innerHTML = '';
+    // Percorre cada loja no produto
+    for (const [lojaNome, lojaInfo] of Object.entries(produto.lojas)) {
+        // Cria o elemento de loja
+        const lojaDiv = document.createElement('div');
+        lojaDiv.classList.add('lj'); // Adiciona a classe 'lj'
 
-            produtos.forEach(produto=> {
-                const loja = document.createElement('div')
-                loja.classList.add('lj');
-        
-                const img = document.createElement('logo')
-                img.src = produto.imagem;
-                img.alt = produto.nome;
-        
-                const aVista = document.createElement('span');
-                avista.textContent = produto.avista;
-        
-                const parcelado = document.createElement('span');
-                cartao.textContent = produto.cartao;
-        
-                loja.appendChild(img);
-                loja.appendChild(titulo);
-                container.appendChild(card);
-        
-            })
-        })
+        // Cria o logo da loja
+        const logoDiv = document.createElement('div');
+        logoDiv.classList.add('logol');
+        const logoImg = document.createElement('img');
+        logoImg.src = lojaInfo.logo;
+        logoImg.alt = `Logo ${lojaNome}`;
+        logoDiv.appendChild(logoImg);
 
+        // Cria a informação de pagamento à vista
+        const avistaDiv = document.createElement('div');
+        avistaDiv.classList.add('avista');
+        avistaDiv.innerHTML = `<p>À vista por<br><span>${lojaInfo.avista}</span></p>`;
 
-    
+        // Cria a informação de pagamento no cartão
+        const cartaoDiv = document.createElement('div');
+        cartaoDiv.classList.add('cartao');
+        cartaoDiv.innerHTML = `<p>ou <span>${lojaInfo.cartao}</span></p>`;
+
+        // Cria o botão de link para a loja
+        const linkDiv = document.createElement('div');
+        linkDiv.classList.add('link');
+        linkDiv.innerHTML = `<p>ir à loja</p>`;
+        linkDiv.addEventListener('click', () => {
+            window.open(lojaInfo.link, '_blank'); // Abre o link em uma nova aba
+        });
+
+        // Adiciona todos os elementos à div da loja
+        lojaDiv.appendChild(logoDiv);
+        lojaDiv.appendChild(avistaDiv);
+        lojaDiv.appendChild(cartaoDiv);
+        lojaDiv.appendChild(linkDiv);
+
+        // Adiciona a loja ao contêiner
+        lojasContainer.appendChild(lojaDiv);
+    }
 }
-
 // Executa a função quando a página é carregada
 document.addEventListener('DOMContentLoaded', carregarProduto);
