@@ -1,4 +1,4 @@
-@media (min-width: 750px) and (max-width: 1255px) {
+@media (min-width: 200px) and (max-width: 749px) {
 
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
@@ -21,16 +21,37 @@
         --sombra: 05px 10px 8px rgba(0, 0, 0, 0.103);
     }
 
+    header {
+        width: 100vw;
+
+    }
+
+    nav ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style-type: none;
+        padding: 10px 10px;
+    }
+    
+    nav ul li {
+        margin: 30px 20px;
+        text-decoration: none;
+        font-size: 25px;
+    }
+
     main .banner {
-        width: 80vw;
-        height: 30vh;
+        display: none;
+        width: 500px;
+        height: 25vh;
     }
 
     main .banner h1 {
         background-color: #00000094;
-        width: 300px;
+        max-width: 300px;
+        min-width: 100px;
         height: 100%;
-        font-size: 25px;
+        font-size: 1.5rem;
         padding-top: 25px;
         padding-left: 10px;
         line-height: 30px;
@@ -56,8 +77,7 @@
     }
     
     main .container-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+        display: block;
         width: 100vw;
         margin-left: 0;
         padding-top: 10px;
@@ -65,29 +85,34 @@
 
     main .container-cards .card {
         display: flex;
-        flex-direction: column;
-        width: 300px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 80vw;
         margin: 10px auto;
-        height: 500px;
+        height: 110px;
     }
 
     main .container-cards img {
         border-radius: 10px;
-        width: 300px;
-        margin: 0 auto;
+        width: 30vw;
         margin-bottom: 0;
         box-shadow: var(--sombra);
     }
     
     main .container-cards h3 {
         text-align: center;
-        font-size: 1.5rem;
+        font-size: .7rem;
+        margin: 10px;
         color: var(--corfont);
-        line-height: 25px;
-        padding-top: 15px;
+        line-height: 12px;
     }
 
     main .filtros {
         display: none;
+    }
+
+    footer {
+        width: 100vw;
     }
 }
