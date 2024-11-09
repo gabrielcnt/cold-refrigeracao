@@ -25,19 +25,30 @@
         width: 100vw;
 
     }
+   
+    header .logo img {
+        width: 50px;
+
+    }
+
+    .logo h1 {
+        margin-top: 28px;
+        font-size: 30px;
+        letter-spacing: 3px;
+    }
 
     nav ul{
         display: flex;
         justify-content: center;
         align-items: center;
         list-style-type: none;
-        padding: 10px 10px;
+        padding: 10px 5px;
     }
     
     nav ul li {
-        margin: 30px 20px;
+        margin: 30px 10px;
         text-decoration: none;
-        font-size: 25px;
+        font-size: 20px;
     }
 
     main .banner {
@@ -95,7 +106,7 @@
 
     main .container-cards img {
         border-radius: 10px;
-        width: 30vw;
+        width: 100px;
         margin-bottom: 0;
         box-shadow: var(--sombra);
     }
@@ -106,13 +117,76 @@
         margin: 10px;
         color: var(--corfont);
         line-height: 12px;
+        padding-bottom: 10px;
     }
 
-    main .filtros {
+    main .filtros .hidden{
         display: none;
+    }
+
+    main .filtros button {
+        position: absolute;
+        left: 50vw;
+        top: 0;
+        width: 100px;
+    }
+
+    .apfiltro {
+        margin-bottom: 10px;
+        left: 70vw;
+        top: 30vh;
+        width: 128px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .apfiltro a {
+        background-color: var(--corlogo);
+        padding: 10px;
+        border-radius: 10px;
+        color: var(--corfont);
+        user-select: none;
+    }
+
+
+    #filtros {
+        position: fixed;
+        z-index: 1000;
+        padding-top: 20px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        height: 70vh;
+        bottom: -70vh;
+        background-color: var(--corbg);
+        overflow-y: auto;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+
+    .show {
+        transform: translateY(-100%);
+    }
+
+    .filtro-link a {
+        color: var(--corlogo);
+        font-size: 1rem;
+        letter-spacing: 5px;
+        font-weight: 500;
+        border-bottom: 1px solid var(--corlogo);
+        padding: 10px;
+        cursor: pointer;
     }
 
     footer {
         width: 100vw;
+        margin-top: 20px;
+    }
+
+    footer p {
+        margin: 20px;
+        line-height: 20px;
+        text-align: center;
+        font-size: 13px;
     }
 }
