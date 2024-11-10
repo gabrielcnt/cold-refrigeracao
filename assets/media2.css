@@ -1,4 +1,4 @@
-@media (min-width: 200px) and (max-width: 749px) {
+@media (min-width: 750px) and (max-width: 980px) {
 
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
@@ -21,48 +21,25 @@
         --sombra: 05px 10px 8px rgba(0, 0, 0, 0.103);
     }
 
-    header {
-        width: 100vw;
-
-    }
-   
-    header .logo img {
-        width: 50px;
-
-    }
-
-    .logo h1 {
-        margin-top: 28px;
-        font-size: 30px;
-        letter-spacing: 3px;
-    }
-
-    nav ul{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        list-style-type: none;
-        padding: 10px 5px;
-    }
-    
-    nav ul li {
-        margin: 30px 10px;
-        text-decoration: none;
-        font-size: 20px;
+    .ani {
+        border: 25px solid var(--corfont);
+        border-right: 25px solid transparent;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        animation: loading 1.5s ease-in-out infinite;
     }
 
     main .banner {
-        display: none;
-        width: 500px;
-        height: 25vh;
+        width: 80vw;
+        height: 30vh;
     }
 
     main .banner h1 {
         background-color: #00000094;
-        max-width: 300px;
-        min-width: 100px;
+        width: 300px;
         height: 100%;
-        font-size: 1.5rem;
+        font-size: 25px;
         padding-top: 25px;
         padding-left: 10px;
         line-height: 30px;
@@ -79,7 +56,7 @@
 
     .filtro-link a {
         color: var(--corlogo);
-        font-size: 2.5rem;
+        font-size: 1.7rem;
         letter-spacing: 5px;
         font-weight: 500;
         border-bottom: 1px solid var(--corlogo);
@@ -87,52 +64,30 @@
         cursor: pointer;
     }
     
-    main .container-cards {
-        display: block;
-        width: 100vw;
-        margin-left: 0;
-        padding-top: 10px;
-    }
-
-    main .container-cards .card {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: 80vw;
-        margin: 10px auto;
-        height: 110px;
-    }
-
-    main .container-cards img {
-        border-radius: 10px;
-        width: 100px;
-        margin-bottom: 0;
-        box-shadow: var(--sombra);
-    }
-    
-    main .container-cards h3 {
-        text-align: center;
-        font-size: .7rem;
-        margin: 10px;
-        color: var(--corfont);
-        line-height: 12px;
-        padding-bottom: 10px;
-    }
-
     main .filtros .hidden{
         display: none;
     }
 
-    main .filtros button {
-        position: absolute;
-        left: 50vw;
-        top: 0;
-        width: 100px;
+    #filtros {
+        position: fixed;
+        z-index: 1000;
+        padding-top: 20px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        height: 70vh;
+        bottom: -70vh;
+        background-color: var(--corbg);
+        overflow-y: auto;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .show {
+        transform: translateY(-100%);
     }
 
     .apfiltro {
-        margin-bottom: 10px;
+        position: absolute;
         left: 70vw;
         top: 30vh;
         width: 128px;
@@ -148,45 +103,85 @@
         user-select: none;
     }
 
+    main .filtros button {
+        position: absolute;
+        left: 65vw;
+        top: 50vh;
+    }
 
-    #filtros {
-        position: fixed;
-        z-index: 1000;
-        padding-top: 20px;
-        left: 0;
-        right: 0;
+    main .container-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(50px));
+        grid-template-columns: repeat(3, 200px);
+        gap: 10px;
         width: 100vw;
-        height: 70vh;
-        bottom: -70vh;
-        background-color: var(--corbg);
-        overflow-y: auto;
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        margin: 20px 50px;
+    }
+
+    main .container-cards .card {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        height: 400px;
+        margin: auto;
+    }
+
+    main .container-cards img {
+        border-radius: 10px;
+        width: 300px;
+        margin: 0 auto;
+        margin-bottom: 0;
+        box-shadow: var(--sombra);
     }
     
-
-    .show {
-        transform: translateY(-100%);
-    }
-
-    .filtro-link a {
-        color: var(--corlogo);
-        font-size: 1rem;
-        letter-spacing: 5px;
-        font-weight: 500;
-        border-bottom: 1px solid var(--corlogo);
-        padding: 10px;
-        cursor: pointer;
-    }
-
-    footer {
-        width: 100vw;
-        margin-top: 20px;
-    }
-
-    footer p {
-        margin: 20px;
-        line-height: 20px;
+    main .container-cards h3 {
         text-align: center;
-        font-size: 13px;
+        font-size: 1rem;
+        color: var(--corfont);
+        line-height: 25px;
+        padding-top: 15px;
+    }
+
+     /*________________________________________PAGINA DE DETALHES DOS PRODUTOS________________________________________*/
+
+     .info-ar h1 {
+        margin-bottom: 0px;
+        font-size: 2rem;
+        text-shadow: var(--sombra);
+        line-height: 40px;
+        padding: 10px;
+    }
+
+    .lojas {
+        margin: auto;
+        padding: 5px;
+        width: 95vw;
+        background-color: var(--corbtn);
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+    
+    .lojas .lj {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--corbg);
+        margin-bottom: 5px;
+    }
+
+    .esp-tec table {
+        margin: 10px auto;
+        font-size: 30px;
+        border-collapse: collapse;
+        width: 95vw;
+        
+    }
+
+    .esp-tec {
+        width: 95vw;
+        margin: 20px 0;
+        border-radius: 10px;
+        background-color: var(--corlogo);
+    
     }
 }

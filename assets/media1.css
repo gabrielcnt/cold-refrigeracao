@@ -1,4 +1,4 @@
-@media (min-width: 750px) and (max-width: 980px) {
+@media (min-width: 200px) and (max-width: 749px) {
 
     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
@@ -21,19 +21,58 @@
         --sombra: 05px 10px 8px rgba(0, 0, 0, 0.103);
     }
 
+    .ani {
+        border: 25px solid var(--corfont);
+        border-right: 25px solid transparent;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        animation: loading 1.5s ease-in-out infinite;
+    }
+
+    header {
+        width: 100vw;
+
+    }
+   
+    header .logo img {
+        width: 50px;
+
+    }
+
+    .logo h1 {
+        margin-top: 28px;
+        font-size: 30px;
+        letter-spacing: 3px;
+    }
+
+    nav ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style-type: none;
+        padding: 10px 5px;
+    }
+    
+    nav ul li {
+        margin: 30px 10px;
+        text-decoration: none;
+        font-size: 20px;
+    }
+
     main .banner {
-        width: 80vw;
-        height: 30vh;
+        width: 100vw;
+        height: 20vh;
+        background-position-y: 0px;
     }
 
     main .banner h1 {
         background-color: #00000094;
-        width: 300px;
-        height: 100%;
-        font-size: 25px;
-        padding-top: 25px;
-        padding-left: 10px;
-        line-height: 30px;
+        width: 200px;
+        height: 20vh;
+        font-size: 1rem;
+        padding: 10px;
+        line-height: 25px;
     }
 
     .filtro-link {
@@ -47,7 +86,7 @@
 
     .filtro-link a {
         color: var(--corlogo);
-        font-size: 1.7rem;
+        font-size: 2.5rem;
         letter-spacing: 5px;
         font-weight: 500;
         border-bottom: 1px solid var(--corlogo);
@@ -55,30 +94,52 @@
         cursor: pointer;
     }
     
+    main .container-cards {
+        display: block;
+        width: 100vw;
+        margin-left: 0;
+        padding-top: 10px;
+    }
+
+    main .container-cards .card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 80vw;
+        margin: 10px auto;
+        height: 110px;
+    }
+
+    main .container-cards img {
+        border-radius: 10px;
+        width: 100px;
+        margin-bottom: 0;
+        box-shadow: var(--sombra);
+    }
+    
+    main .container-cards h3 {
+        text-align: center;
+        font-size: .7rem;
+        margin: 10px;
+        color: var(--corfont);
+        line-height: 12px;
+        padding-bottom: 10px;
+    }
+
     main .filtros .hidden{
         display: none;
     }
 
-    #filtros {
-        position: fixed;
-        z-index: 1000;
-        padding-top: 20px;
-        left: 0;
-        right: 0;
-        width: 100vw;
-        height: 70vh;
-        bottom: -70vh;
-        background-color: var(--corbg);
-        overflow-y: auto;
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .show {
-        transform: translateY(-100%);
+    main .filtros button {
+        position: absolute;
+        left: 50vw;
+        top: 0;
+        width: 100px;
     }
 
     .apfiltro {
-        position: absolute;
+        margin-bottom: 10px;
         left: 70vw;
         top: 30vh;
         width: 128px;
@@ -94,43 +155,215 @@
         user-select: none;
     }
 
-    main .filtros button {
-        position: absolute;
-        left: 65vw;
-        top: 50vh;
-    }
 
-    main .container-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(50px));
-        grid-template-columns: repeat(3, 200px);
-        gap: 10px;
+    #filtros {
+        position: fixed;
+        z-index: 1000;
+        padding-top: 20px;
+        left: 0;
+        right: 0;
         width: 100vw;
-        margin: 20px 50px;
-    }
-
-    main .container-cards .card {
-        display: flex;
-        flex-direction: column;
-        width: 200px;
-        height: 400px;
-        margin: auto;
-    }
-
-    main .container-cards img {
-        border-radius: 10px;
-        width: 300px;
-        margin: 0 auto;
-        margin-bottom: 0;
-        box-shadow: var(--sombra);
+        height: 70vh;
+        bottom: -70vh;
+        background-color: var(--corbg);
+        overflow-y: auto;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
-    main .container-cards h3 {
-        text-align: center;
-        font-size: 1rem;
-        color: var(--corfont);
-        line-height: 25px;
-        padding-top: 15px;
+
+    .show {
+        transform: translateY(-100%);
     }
 
+    .filtro-link a {
+        color: var(--corlogo);
+        font-size: 1rem;
+        letter-spacing: 5px;
+        font-weight: 500;
+        border-bottom: 1px solid var(--corlogo);
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    footer {
+        width: 100vw;
+        margin-top: 20px;
+    }
+
+    footer p {
+        margin: 20px;
+        line-height: 20px;
+        text-align: center;
+        font-size: 13px;
+    }
+
+    /*________________________________________PAGINA DE DETALHES DOS PRODUTOS________________________________________*/
+
+    .info-ar {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 5px;
+        width: 100vw;
+        height: 200px;
+        border-radius: 20px;
+        text-align: center;
+        background-color: var(--corlogo);
+    }
+
+    .info-ar .foto img {
+        width: 150px;
+        border-radius: 10px;
+        box-shadow: var(--sombra);
+    }
+
+    .info-ar h1 {
+        margin-bottom: 0px;
+        font-size: .9rem;
+        text-shadow: var(--sombra);
+        line-height: 20px;
+        padding: 10px;
+    }
+
+    .lojas {
+        margin: auto;
+        padding: 5px;
+        width: 100vw;
+        background-color: var(--corbtn);
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+    
+    .lojas .lj {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--corbg);
+        margin-bottom: 5px;
+    }
+    
+    .lojas .lj .logol img {
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+    
+    .lojas .lj p {
+        font-size: 10px;
+        line-height: 15px;
+    }
+    .lojas .lj span {
+        color: var(--corfont);
+        font-size: 15px;
+    
+    }
+
+    .lojas .lj .link {
+        background-color: var(--corlogo);
+        padding: 10px;
+        border-radius: 20px;
+        box-shadow: var(--sombra);
+        user-select: none;
+        cursor: pointer;
+    }
+
+    .lojas .lj .link p {
+        line-height: 15px;
+        font-size: 15px;
+    }
+
+    /*________________________________________ESPECIFICAÇÕES TECNICAS________________________________________*/
+
+    .esp-tec {
+        width: 100vw;
+        margin: 20px 0;
+        border-radius: 10px;
+        background-color: var(--corlogo);
+    
+    }
+    
+    .esp-tec table {
+        margin: 10px auto;
+        font-size: 15px;
+        border-collapse: collapse;
+        width: 100vw;
+        
+    }
+
+    /*________________________________________PAGINA INDEX________________________________________*/
+
+    
+    main .anun {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        gap: 0px;
+        width: 100vw;
+        margin: 20px auto;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--corbtn);
+    }
+
+    main .anun img {
+        width: 100vw;
+        border-radius: 10px;
+        margin: 10px 0;
+    }
+
+    main .anun .info {
+        width: 100vw;
+        margin-bottom: 20px;
+    }
+
+    main .anun .info h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 30px;
+        line-height: 30px;
+        margin: 10px auto;
+    }
+
+    main .anun .info .ver-p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70px;
+        width: 200px;
+        margin: auto;
+        font-size: 20px;
+        line-height: 20px;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    main .anun .video {
+        width: 100vw;
+    }
+    main .anun .video h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+        line-height: 40px;
+        text-align: center;
+    }
+
+    main .anun .video p {
+        text-align: center;
+        line-height: 20px;
+        letter-spacing: 2px;
+        padding: 0 10px;
+        margin-bottom: 10px;
+    }
+
+    main .anun .video iframe {
+        width: 100vw;
+        height: 250px;
+    }
+    
+    main .anun .samsung {
+        width: 100vw;
+        margin: 0;
+        
+    }
 }
